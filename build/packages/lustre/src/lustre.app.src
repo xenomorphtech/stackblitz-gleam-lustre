@@ -1,0 +1,12 @@
+{application, lustre, [
+    {vsn, "1.3.0"},
+    {applications, [gleam_stdlib,
+                    gleeunit]},
+    {description, "A framework for building web apps - powered by Gleam and React!"},
+    {modules, [lustre,
+               lustre@attribute,
+               lustre@cmd,
+               lustre@element,
+               lustre@event]},
+    {registered, []}
+]}.

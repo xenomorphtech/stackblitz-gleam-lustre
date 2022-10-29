@@ -1,81 +1,21 @@
-# Lustre
+# lustre_counter
 
-A framework for building create web apps – powered by Gleam and React!
+This is an example Lustre project. It uses [watchexec](https://github.com/watchexec/watchexec) to rebuild the Gleam project on save.
 
----
+## Quick start
 
-[![Package Version](https://img.shields.io/hexpm/v/lustre)](https://hex.pm/packages/lustre)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/lustre/)
-
-```gleam
-import gleam/int
-import lustre
-import lustre/element.{button, div, p, text}
-import lustre/event.{dispatch, on_click}
-import lustre/cmd
-
-pub fn main() {
-  let app = lustre.application(#(0, cmd.none()), update, render)
-  lustre.start(app, "#app")
-}
-
-pub type Action {
-  Incr
-  Decr
-}
-
-fn update(state, action) {
-  case action {
-    Incr -> #(state + 1, cmd.none())
-    Decr -> #(state - 1, cmd.none())
-  }
-}
-
-fn render(state) {
-  div(
-    [],
-    [
-      button([on_click(dispatch(Decr))], [text("-")]),
-      p([], [text(int.to_string(state))]),
-      button([on_click(dispatch(Incr))], [text("+")]),
-    ],
-  )
-}
-```
-
----
-
-❗️ This package relies on Gleam's JavaScript FFI and is intended to be run in
-the browser. **It will not work if your are targetting Node.js or Erlang.**
-
----
-
-## Installation
-
-If available on Hex, this package can be added to your Gleam project:
-
+Initial setup:
 ```sh
-gleam add lustre
+npm install
+gleam build
 ```
 
-and its documentation can be found at <https://hexdocs.pm/lustre>. You will also
-need to install `react` and `react-dom` from npm:
-
+Run dev server on `localhost:3000`:
 ```sh
-npm i react react-dom
+make dev
 ```
 
----
-
-## Development
-
-First, make sure you have both Gleam and Node.js installed, then:
-
-```bash
-npm i
-npm start
+Make a production build under `dist` folder:
+```sh
+make
 ```
-
-This sets up `chokidar` to watch our gleam source code and runs the compiler
-whenever we make a change. It also starts a server that will serve the examples
-located in `test/example/`.

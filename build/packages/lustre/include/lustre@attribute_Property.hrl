@@ -1,0 +1,1 @@
+-record(property, {name :: binary(), value :: gleam@dynamic:dynamic()}).

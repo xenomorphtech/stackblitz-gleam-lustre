@@ -1,0 +1,1 @@
+-record(attribute, {name :: binary(), value :: binary()}).
