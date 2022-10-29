@@ -1,0 +1,20 @@
+{
+  "name": "gleam-wasm-wc",
+  "collaborators": [
+    "Louis Pilfold <louis@lpil.uk>"
+  ],
+  "version": "0.25.0-dev",
+  "license": "SEE LICENSE IN LICENCE",
+  "files": [
+    "gleam_wasm_wc_bg.wasm",
+    "gleam_wasm_wc.js",
+    "gleam_wasm_wc_bg.js",
+    "gleam_wasm_wc.d.ts"
+  ],
+  "module": "gleam_wasm_wc.js",
+  "types": "gleam_wasm_wc.d.ts",
+  "sideEffects": false,
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
