@@ -7,6 +7,10 @@
   },
   "scripts": {
     "build": "node pkg/build.mjs"
+  },
+  "stackblitz": {
+    "startCommand": "npm install && npm build && npm exec vite ",
+    "compileTrigger": "save"
   }
 }
 
